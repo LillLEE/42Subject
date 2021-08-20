@@ -6,7 +6,7 @@
 /*   By: junholee <junholee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 18:38:11 by junholee          #+#    #+#             */
-/*   Updated: 2021/08/12 16:06:59 by junholee         ###   ########.fr       */
+/*   Updated: 2021/08/20 08:52:43 by junholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ int	print_i(int n)
 		i++;
 	}
 	str = ft_itoa_base(n, 'i');
+	if (str == NULL)
+		return (-1);
 	size = i + write(1, str, ft_strlen(str));
 	free(str);
 	return (size);

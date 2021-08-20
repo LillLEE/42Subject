@@ -6,7 +6,7 @@
 /*   By: junholee <junholee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 14:38:23 by junholee          #+#    #+#             */
-/*   Updated: 2021/08/12 16:42:38 by junholee         ###   ########.fr       */
+/*   Updated: 2021/08/20 08:55:14 by junholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ int	print_u(unsigned int n)
 	int		size;
 
 	str = ft_itoa_base(n, 'u');
+	if (str == NULL)
+		return (-1);
 	size = write(1, str, ft_strlen(str));
 	free(str);
 	return (size);
