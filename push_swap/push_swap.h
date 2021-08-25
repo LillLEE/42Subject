@@ -6,7 +6,7 @@
 /*   By: junholee <junholee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 19:01:32 by junholee          #+#    #+#             */
-/*   Updated: 2021/08/25 19:15:21 by junholee         ###   ########.fr       */
+/*   Updated: 2021/08/25 20:56:53 by junholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,10 @@ typedef struct Stack
 	struct Node *bottom;
 }Stack;
 
+//split
+char			**ft_split(char const *s, char c);
+//Error Check
+
 //Node and Stack
 int		isEmpty(Stack *stack);
 Node	*initNode(int data);
@@ -55,5 +59,9 @@ void	push_b(Stack *stack_a, Stack *stack_b);
 void	rotate_a(Stack *stack_a);
 void	rotate_b(Stack *stack_b);
 void	rotate_ab(Stack *stack_a, Stack *stack_b);
+//Reverse rotate a,b
+void	reverse_a(Stack *stack_a);
+void	reverse_b(Stack *stack_b);
+void	reverse_ab(Stack *stack_a, Stack *stack_b);
 
 #endif

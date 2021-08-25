@@ -6,7 +6,7 @@
 /*   By: junholee <junholee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 19:17:23 by junholee          #+#    #+#             */
-/*   Updated: 2021/08/25 19:01:03 by junholee         ###   ########.fr       */
+/*   Updated: 2021/08/25 20:48:35 by junholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,16 +58,14 @@ void push_Top(Stack *stack, int data)
 
 void pop_Top(Stack *stack)
 {
-	Node *tmpNode;
-
-	if (stack->size == 0)
-		tmpNode = NULL;
+	if (stack->top == NULL)
+		return ;
+	else if (stack->top->next == NULL)
+		stack->top = NULL;
 	else
 	{
-		tmpNode = stack->top;
 		stack->top = stack->top->next;
 		stack->top->prev = NULL;
 		stack->size--;
 	}
-	free(tmpNode);
 }

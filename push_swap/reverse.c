@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   reverse.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junholee <junholee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/23 19:24:21 by junholee          #+#    #+#             */
-/*   Updated: 2021/08/25 20:52:22 by junholee         ###   ########.fr       */
+/*   Created: 2021/08/25 20:14:46 by junholee          #+#    #+#             */
+/*   Updated: 2021/08/25 20:19:26 by junholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int check(char *s)
+void	reverse_a(Stack *stack_a)
 {
-	int i;
+	int bottom_data;
 
-	i = 0;
-	while (s[i])
+	if (stack_a->size > 1)
 	{
-		if (!('0' <= s[i] && s[i] <= '9'))
-			return (1);
-		i++;
+		bottom_data = stack_a->bottom->data;
+		pop_Btm(stack_a);
+		push_Top(stack_a,bottom_data);
 	}
-	return (0);
 }
-
-void error_check(char *s)
+void	reverse_b(Stack *stack_b)
 {
-	if (check(s) == 1)
-		write(1,"Error",7);
+	int bottom_data;
+
+	if (stack_b->size > 1)
+	{
+		bottom_data = stack_b->bottom->data;
+		pop_Btm(stack_b);
+		push_Top(stack_b,bottom_data);
+	}
+}
+void	reverse_ab(Stack *stack_a, Stack *stack_b)
+{
+	reverse_a(stack_a);
+	reverse_b(stack_b);
 }

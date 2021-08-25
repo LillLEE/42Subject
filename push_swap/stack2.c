@@ -6,7 +6,7 @@
 /*   By: junholee <junholee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 03:33:37 by junholee          #+#    #+#             */
-/*   Updated: 2021/08/25 19:15:38 by junholee         ###   ########.fr       */
+/*   Updated: 2021/08/25 20:48:29 by junholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,6 @@ void push_Btm(Stack *stack ,int data)
 
 void pop_Btm(Stack *stack)
 {
-	Node *tmpNode;
-
-	tmpNode = stack->bottom;
 	if (stack->bottom == NULL)
 		return;
 	else if (stack->top->next == NULL)
@@ -40,7 +37,6 @@ void pop_Btm(Stack *stack)
 		stack->bottom->prev->next = NULL;
 	stack->bottom = stack->bottom->next;
 	stack->size--;
-	free(tmpNode);
 }
 
 void display(Stack *stack)

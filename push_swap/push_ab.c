@@ -6,7 +6,7 @@
 /*   By: junholee <junholee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 04:03:12 by junholee          #+#    #+#             */
-/*   Updated: 2021/08/25 19:13:05 by junholee         ###   ########.fr       */
+/*   Updated: 2021/08/25 20:37:30 by junholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,23 @@ void push_b(Stack *stack_a, Stack *stack_b)
 {
 	int	data;
 
-	if (stack_a->size == 0)
-		return ;
-	else
+	if (stack_a->size != 0)
 	{
 		data = stack_a->top->data;
-		pop_Top(stack_a);
 		push_Top(stack_b,data);
+		pop_Top(stack_a);
 	}
 }
 
 void push_a(Stack *stack_a, Stack *stack_b)
 {
 	int data;
-
-	if (stack_b->size == 0)
-		return ;
-	else
+	int stack_size;
+	
+	if (stack_b->size != 0)
 	{
 		data = stack_b->top->data;
-		pop_Top(stack_b);
 		push_Top(stack_a,data);
+		pop_Top(stack_b);
 	}
 }
