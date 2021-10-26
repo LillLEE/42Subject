@@ -6,7 +6,7 @@
 /*   By: junholee <junholee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 14:38:23 by junholee          #+#    #+#             */
-/*   Updated: 2021/08/20 08:55:14 by junholee         ###   ########.fr       */
+/*   Updated: 2021/08/20 09:32:38 by junholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ int	print_p(unsigned long n)
 
 	if (n == 0)
 	{
-		write(1, "(nil)", 6);
-		return (5);
+		write(1, "0x0", 3);
+		return (3);
 	}
 	size = base_size(n, 'p');
 	size += 1;

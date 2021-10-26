@@ -6,7 +6,7 @@
 /*   By: junholee <junholee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 18:38:11 by junholee          #+#    #+#             */
-/*   Updated: 2021/08/20 08:52:43 by junholee         ###   ########.fr       */
+/*   Updated: 2021/10/26 15:03:31 by junholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ int	print_s(char *str)
 	int	size;
 
 	size = 0;
+	if (str == NULL)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 	while (str[size])
 	{
 		ft_putchr(str[size]);

@@ -6,7 +6,7 @@
 /*   By: junholee <junholee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 14:24:48 by junholee          #+#    #+#             */
-/*   Updated: 2021/08/12 22:40:14 by junholee         ###   ########.fr       */
+/*   Updated: 2021/08/21 16:46:03 by junholee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
-# include <stdio.h>
 
 int		find_format(va_list value, char *format);
 int		ft_printf(const char *format, ...);
-int     main(void);
 
 int		print_c(int n);
 int		print_s(char *str);
