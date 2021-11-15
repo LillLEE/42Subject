@@ -6,34 +6,36 @@
 #    By: junholee <junholee@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/11 16:56:00 by junholee          #+#    #+#              #
-#    Updated: 2021/08/21 17:38:51 by junholee         ###   ########.fr        #
+#    Updated: 2021/11/16 07:08:23 by junholee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= libftprintf.a
 
-SOURCE= ft_printf.c ft_sub.c ft_sub2.c ft_sub3.c
+SRCS= ft_printf.c ft_sub.c ft_sub2.c ft_sub3.c
 
-HEADER= ft_printf.h
+ERROR= echo 💥 NO $(file) 💥;
 
-OUT=$(SOURCE:.c=.o)
+HDR= ft_printf.h
+
+OBJS=$(SRCS:.c=.o)
 
 CC= gcc
 
-FLAGE= -Wall -Wextra -Werror
+CFLAGS= -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME):$(OUT)
-	@ar rcs  $(NAME) $(OUT)
-
-$(OUT): $(SOURCE) $(HEADER)
-	@$(CC) $(FLAGE) -c $(SOURCE)
+$(NAME): $(OBJS)
+	ar -rcs $(NAME) $(OBJS)
+	@echo -🧨 COMPILE $(NAME) SUCCESS🧨- 
 
 clean:
-	@rm -f $(OUT)
+	@$(foreach file, $(OBJS), test -f $(file) && rm -v $(file) || $(ERROR))
 
 fclean: clean
-	@rm -f $(NAME)
+	@$(foreach file, $(NAME), test -f $(file) && rm -v $(file) || $(ERROR))
 
 re: fclean all
+
+.PHONY : all clean fclean re
